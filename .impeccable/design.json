@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-19T00:00:00Z",
+  "title": "Design System: Felipe Lima — Video Maker & Creator",
+  "extensions": {
+    "colorMeta": {
+      "ground": { "role": "neutral", "displayName": "Room Ground", "canonical": "#1f2020", "tonalRamp": ["#0d0e0e", "#141515", "#1f2020", "#303131", "#4a4b4b", "#6e6f6f", "#a6a7a7", "#d9d9d9"] },
+      "surface": { "role": "neutral", "displayName": "Raised Room", "canonical": "#262727", "tonalRamp": ["#0d0e0e", "#141515", "#1f2020", "#262727", "#3a3b3b", "#5a5b5b", "#8c8d8d", "#c4c5c5"] },
+      "veil": { "role": "neutral", "displayName": "Veil", "canonical": "#141515", "tonalRamp": ["#0a0b0b", "#141515", "#1f2020", "#2d2e2e", "#4a4b4b", "#6e6f6f", "#a6a7a7", "#d9d9d9"] },
+      "device": { "role": "neutral", "displayName": "Device Black", "canonical": "#0d0e0e", "tonalRamp": ["#050606", "#0d0e0e", "#1a1b1b", "#262727", "#3b3c3c", "#5a5b5b", "#8c8d8d", "#c4c5c5"] },
+      "device-edge": { "role": "neutral", "displayName": "Device Edge", "canonical": "#3b3c3c", "tonalRamp": ["#0d0e0e", "#1f2020", "#2d2e2e", "#3b3c3c", "#5a5b5b", "#7a7b7b", "#a6a7a7", "#d9d9d9"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#ffffff", "tonalRamp": ["#262727", "#4a4b4b", "#6e6f6f", "#8c8d8d", "#a6a7a7", "#c4c5c5", "#e6e6e6", "#ffffff"] },
+      "text": { "role": "neutral", "displayName": "Pale Grey", "canonical": "#d9d9d9", "tonalRamp": ["#262727", "#3a3b3b", "#5a5b5b", "#7a7b7b", "#a6a7a7", "#c4c5c5", "#d9d9d9", "#f0f0f0"] },
+      "muted": { "role": "neutral", "displayName": "Muted Grey", "canonical": "#a6a7a7", "tonalRamp": ["#262727", "#3a3b3b", "#5a5b5b", "#7a7b7b", "#a6a7a7", "#c4c5c5", "#d9d9d9", "#f0f0f0"] },
+      "mark-red": { "role": "primary", "displayName": "Mark Red", "canonical": "#ff3131", "tonalRamp": ["#3d0505", "#6b0909", "#a10f0f", "#d61c1c", "#ff3131", "#ff6a6a", "#ffa3a3", "#ffdcdc"] },
+      "mark-red-text": { "role": "primary", "displayName": "Mark Red, Text Tone", "canonical": "#ff4a4a", "tonalRamp": ["#3d0505", "#6b0909", "#a10f0f", "#d61c1c", "#ff4a4a", "#ff7a7a", "#ffadad", "#ffe0e0"] },
+      "on-red": { "role": "neutral", "displayName": "Dark on Red", "canonical": "#1a1b1b", "tonalRamp": ["#0d0e0e", "#1a1b1b", "#2d2e2e", "#4a4b4b", "#6e6f6f", "#a6a7a7", "#d9d9d9", "#ffffff"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "rgba(255, 255, 255, 0.34)", "tonalRamp": ["rgba(255,255,255,0.08)", "rgba(255,255,255,0.12)", "rgba(255,255,255,0.16)", "rgba(255,255,255,0.24)", "rgba(255,255,255,0.34)", "rgba(255,255,255,0.5)", "rgba(255,255,255,0.75)", "rgba(255,255,255,1)"] },
+      "hairline-soft": { "role": "neutral", "displayName": "Soft Hairline", "canonical": "rgba(255, 255, 255, 0.16)", "tonalRamp": ["rgba(255,255,255,0.04)", "rgba(255,255,255,0.08)", "rgba(255,255,255,0.12)", "rgba(255,255,255,0.16)", "rgba(255,255,255,0.24)", "rgba(255,255,255,0.34)", "rgba(255,255,255,0.5)", "rgba(255,255,255,0.75)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Uppercase \"FELIPE LIMA\" behind the hero portrait in Pale Grey; one line on desktop, two stacked lines at 29cqi below 760px." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles under a hairline, revealed word by word." },
+      "figure": { "displayName": "Figure", "purpose": "Result numbers, tabular numerals." },
+      "title": { "displayName": "Title", "purpose": "Services list items; case names in uppercase at the same size." },
+      "statement": { "displayName": "Statement", "purpose": "The white bio paragraph, max 34ch." },
+      "body": { "displayName": "Body", "purpose": "Reading text in Pale Grey; work captions at 0.875rem." },
+      "description": { "displayName": "Description", "purpose": "Thin wide case navigator, case prose, footer row, captions; web substitute for CyGrotesk Key Thin." },
+      "role": { "displayName": "Role", "purpose": "\"Video Maker & Creator\" top-left of the hero." },
+      "label": { "displayName": "Label", "purpose": "Uppercase nav wordmark; media tags use the face in sentence case." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "CSS state transitions: button press, underline wipes, dock entry, chip lift, gallery zoom." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.77, 0, 0.175, 1)", "purpose": "Reserved token for symmetrical CSS transitions." },
+      { "name": "gsap-expo-out", "value": "expo.out, 0.8-1.4s, stagger 0.06-0.09", "purpose": "Text, word-mask and list reveals (y 18-40px or yPercent 110); section hairline draws." },
+      { "name": "gsap-expo-inout", "value": "expo.inOut, 1.1-1.8s", "purpose": "Diagonal clip-path media wipes, orbit and closing-mark stroke draws, intro fly and curtain." },
+      { "name": "diagonal-wipe", "value": "clip-path: polygon(0% 0%, 0% 0%, -60% 100%, -60% 100%) -> polygon(0% 0%, 160% 0%, 100% 100%, -60% 100%)", "purpose": "Reveal for work tiles and case gallery stills, at the mark's angle." },
+      { "name": "mark-angle", "value": "rotate(-29deg)", "purpose": "The FL mark slab angle; every diagonal uses it." },
+      { "name": "intro", "value": "slab outlines draw (stroke-dashoffset, power2.inOut 1.15s, stagger 0.28) -> fill red (0.7s, stagger 0.2) -> outline fades -> mark flies to nav (expo.inOut 1.1s) + diagonal curtain wipe (1.25s) -> portrait rises from blur, name chars rise, orbit draws (1.8s), diagonal draws; every load, skippable on first input", "purpose": "Opening sequence into the hero." },
+      { "name": "orbit-to-nav", "value": "ScrollTrigger scrub 0.6 over the hero; items power2.inOut to bar link positions, stagger 0.04; ellipse fades", "purpose": "The orbit menu becomes the bar menu on scroll." },
+      { "name": "hero-scrub", "value": "name yPercent -30; portrait scale 0.94 from bottom centre; scrub over the hero", "purpose": "Depth through layering, not shadows." },
+      { "name": "smooth-scroll", "value": "Lenis lerp 0.1 driven by the GSAP ticker", "purpose": "Page scroll; disabled under reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "1024px" },
+      { "name": "mobile", "value": "760px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Accent Button (WhatsApp)",
+      "kind": "button",
+      "refersTo": "button-accent",
+      "description": "The only red button; used exclusively for the WhatsApp action.",
+      "html": "<a class=\"ds-btn ds-btn-accent\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.2-1.36A9.9 9.9 0 1 0 12.04 2Zm0 18.13a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.08.81.82-3-.2-.31a8.23 8.23 0 1 1 6.96 3.83Z\"/></svg><span>Chamar no WhatsApp</span></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 15px 22px; font-family: var(--f-title, Inter, Arial, sans-serif); font-weight: 700; font-size: 1rem; letter-spacing: -0.01em; line-height: 1.2; white-space: nowrap; border: 1px solid transparent; border-radius: 0; text-decoration: none; transition: transform 160ms cubic-bezier(0.23,1,0.32,1), background-color 200ms ease, border-color 200ms ease; } .ds-btn svg { width: 20px; height: 20px; flex: none; } .ds-btn-accent { background: var(--accent, #ff3131); color: var(--on-accent, #1a1b1b); } .ds-btn-accent:hover { background: var(--accent-text, #ff4a4a); } .ds-btn:active { transform: scale(0.97); } .ds-btn:focus-visible { outline: 2px solid var(--accent, #ff3131); outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Hairline-outlined secondary action (Instagram).",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" d=\"M7.5 2.75h9a4.75 4.75 0 0 1 4.75 4.75v9a4.75 4.75 0 0 1-4.75 4.75h-9a4.75 4.75 0 0 1-4.75-4.75v-9A4.75 4.75 0 0 1 7.5 2.75Z\"/><circle cx=\"12\" cy=\"12\" r=\"4.1\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"17.4\" cy=\"6.6\" r=\"1.1\" fill=\"currentColor\"/></svg><span>@ofelipesm</span></a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 15px 22px; font-family: var(--f-title, Inter, Arial, sans-serif); font-weight: 700; font-size: 1rem; letter-spacing: -0.01em; color: var(--ink, #fff); background: transparent; border: 1px solid var(--line, rgba(255,255,255,0.34)); border-radius: 0; text-decoration: none; transition: transform 160ms cubic-bezier(0.23,1,0.32,1), border-color 200ms ease; } .ds-btn-ghost svg { width: 20px; height: 20px; } .ds-btn-ghost:hover { border-color: var(--ink, #fff); } .ds-btn-ghost:active { transform: scale(0.97); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--accent, #ff3131); outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Fixed bar: red FL mark plus wide uppercase name, five underline-wipe links, red-text WhatsApp link, soft hairline beneath.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-brand\" href=\"#\"><svg class=\"ds-nav-mark\" viewBox=\"0 0 317 770\" aria-hidden=\"true\"><path d=\"M0 175 317 0v115L0 292z\"/><path d=\"M0 355 317 179v113L102 414v124L0 591z\"/><path d=\"M209 411 317 355v234L0 770V655l212-120z\"/></svg><span class=\"ds-nav-name\">Felipe Lima</span></a><nav class=\"ds-nav-links\"><a href=\"#\" class=\"is-active\">Trabalhos</a><a href=\"#\">Serviços</a><a href=\"#\">Cases</a><a href=\"#\">Resultados</a><a href=\"#\">Sobre</a></nav><a class=\"ds-nav-cta\" href=\"#\">WhatsApp</a><span class=\"ds-nav-line\"></span></header>",
+      "css": ".ds-nav { position: relative; height: 68px; display: flex; align-items: center; gap: 28px; padding: 0 24px; background: var(--bg, #1f2020); color: var(--ink, #fff); font-family: var(--f-text, 'Open Sans', Arial, sans-serif); } .ds-nav-brand { display: inline-flex; align-items: center; gap: 12px; margin-right: auto; color: inherit; text-decoration: none; } .ds-nav-mark { width: 14px; height: 34px; fill: var(--accent, #ff3131); } .ds-nav-name { font-family: var(--f-desc, 'Lexend Exa', Arial, sans-serif); font-weight: 300; font-size: 0.8125rem; letter-spacing: 0.18em; text-transform: uppercase; } .ds-nav-links { display: flex; gap: 26px; } .ds-nav-links a, .ds-nav-cta { position: relative; font-size: 0.9375rem; padding: 6px 0; color: inherit; text-decoration: none; } .ds-nav-cta { color: var(--accent-text, #ff4a4a); font-weight: 600; } .ds-nav-links a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 2px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform 300ms cubic-bezier(0.23,1,0.32,1); } .ds-nav-links a:hover::after { transform: scaleX(1); transform-origin: left; } .ds-nav-links a.is-active::after { transform: scaleX(1); } .ds-nav a:focus-visible { outline: 2px solid var(--accent, #ff3131); outline-offset: 3px; } .ds-nav-line { position: absolute; left: 24px; right: 24px; bottom: 0; height: 1px; background: var(--line-soft, rgba(255,255,255,0.16)); }"
+    },
+    {
+      "name": "Orbit Menu",
+      "kind": "nav",
+      "refersTo": "hairline",
+      "description": "Signature: section links resting on a hairline ellipse, each a 7px white square on the line plus a label; on scroll they travel into the bar.",
+      "html": "<div class=\"ds-orbit\"><svg class=\"ds-orbit-ring\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><ellipse cx=\"50\" cy=\"52\" rx=\"30\" ry=\"40\"/></svg><a class=\"ds-orbit-item\" style=\"left:calc(80% - 3.5px);top:calc(52% - 18px)\" href=\"#\">Cases</a><a class=\"ds-orbit-item ds-orbit-item--left\" style=\"right:calc(80% - 3.5px);top:calc(52% - 18px)\" href=\"#\">Trabalhos</a></div>",
+      "css": ".ds-orbit { position: relative; width: 100%; height: 280px; background: var(--bg, #1f2020); } .ds-orbit-ring { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; } .ds-orbit-ring ellipse { fill: none; stroke: var(--line, rgba(255,255,255,0.34)); stroke-width: 1; vector-effect: non-scaling-stroke; } .ds-orbit-item { position: absolute; display: inline-flex; align-items: center; gap: 10px; padding: 8px 0; font-family: var(--f-text, 'Open Sans', Arial, sans-serif); font-size: 1rem; color: var(--ink, #fff); text-decoration: none; white-space: nowrap; } .ds-orbit-item--left { flex-direction: row-reverse; } .ds-orbit-item::before { content: ''; width: 7px; height: 7px; flex: none; background: var(--ink, #fff); } .ds-orbit-item:focus-visible { outline: 2px solid var(--accent, #ff3131); outline-offset: 3px; }"
+    },
+    {
+      "name": "Media Tile",
+      "kind": "card",
+      "refersTo": "media-tile",
+      "description": "Square-cornered 9:16 video frame with a veil 'Ver com som' chip; plays muted on hover or in view, opens a full-screen player with sound.",
+      "html": "<figure class=\"ds-work\"><button class=\"ds-media\" type=\"button\"><span class=\"ds-media-fill\"></span><span class=\"ds-media-chip\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" d=\"M4 9.5h3.5L12 6v12l-4.5-3.5H4z M15.5 9a4 4 0 0 1 0 6 M18 6.5a7.5 7.5 0 0 1 0 11\"/></svg><span>Ver com som</span></span></button><figcaption>@emporiofribal</figcaption></figure>",
+      "css": ".ds-work { margin: 0; width: 220px; } .ds-media { position: relative; display: block; width: 100%; aspect-ratio: 9 / 16; overflow: hidden; background: var(--surface, #262727); border: 0; border-radius: 0; padding: 0; cursor: pointer; } .ds-media-fill { position: absolute; inset: 0; background: linear-gradient(160deg, #3a3b3b, #141515); } .ds-media:active { transform: scale(0.985); } .ds-media:focus-visible { outline: 2px solid var(--accent, #ff3131); outline-offset: 3px; } .ds-media-chip { position: absolute; right: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 10px; background: rgba(20,21,21,0.78); color: var(--ink, #fff); font-family: var(--f-text, 'Open Sans', Arial, sans-serif); font-size: 0.8125rem; transition: transform 200ms cubic-bezier(0.23,1,0.32,1); } .ds-media-chip svg { width: 16px; height: 16px; } .ds-media:hover .ds-media-chip { transform: translateY(-2px); } .ds-work figcaption { margin-top: 12px; font-family: var(--f-text, 'Open Sans', Arial, sans-serif); font-size: 0.875rem; color: var(--text, #d9d9d9); }"
+    },
+    {
+      "name": "Placeholder Tag",
+      "kind": "chip",
+      "refersTo": "media-tag",
+      "description": "Veil tag marking a slot whose video is still to come, led by a 7px pale grey square.",
+      "html": "<div class=\"ds-slot\"><span class=\"ds-tag\">Vídeo em breve</span></div>",
+      "css": ".ds-slot { position: relative; width: 180px; aspect-ratio: 9 / 16; background: var(--surface, #262727); } .ds-tag { position: absolute; left: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 8px; padding: 6px 9px; background: rgba(20,21,21,0.82); color: var(--ink, #fff); font-family: var(--f-desc, 'Lexend Exa', Arial, sans-serif); font-weight: 300; font-size: 0.8125rem; letter-spacing: 0.03em; line-height: 1.2; white-space: nowrap; } .ds-tag::before { content: ''; width: 7px; height: 7px; background: var(--text, #d9d9d9); flex: none; }"
+    },
+    {
+      "name": "Phone Frame",
+      "kind": "custom",
+      "refersTo": "phone-frame",
+      "description": "The one rounded object: a drawn phone holding a case's main video or image.",
+      "html": "<div class=\"ds-phone\"><div class=\"ds-phone-screen\"></div></div>",
+      "css": ".ds-phone { position: relative; width: 220px; aspect-ratio: 9 / 18.6; padding: 7px; border-radius: 30px; background: #0d0e0e; border: 1px solid #3b3c3c; } .ds-phone::before { content: ''; position: absolute; z-index: 2; top: 13px; left: 50%; width: 30%; height: 16px; transform: translateX(-50%); border-radius: 10px; background: #0d0e0e; } .ds-phone-screen { width: 100%; height: 100%; border-radius: 23px; overflow: hidden; background: linear-gradient(160deg, #3a3b3b, #141515); }"
+    },
+    {
+      "name": "Case Navigator",
+      "kind": "nav",
+      "refersTo": "case-nav-link",
+      "description": "Sticky strip of case names in thin Lexend Exa; the case in view turns white with a drawn underline.",
+      "html": "<nav class=\"ds-casenav\"><a href=\"#\">Empório Fribal</a><a href=\"#\" class=\"is-active\">Alphaville Araçagi</a><a href=\"#\">@alphathermeng</a></nav>",
+      "css": ".ds-casenav { display: flex; gap: 28px; background: var(--bg, #1f2020); border-bottom: 1px solid var(--line-soft, rgba(255,255,255,0.16)); padding: 0 24px; overflow-x: auto; } .ds-casenav a { position: relative; display: block; padding: 16px 0 14px; font-family: var(--f-desc, 'Lexend Exa', Arial, sans-serif); font-weight: 300; font-size: 0.875rem; letter-spacing: 0.02em; color: var(--muted, #a6a7a7); white-space: nowrap; text-decoration: none; transition: color 200ms ease; } .ds-casenav a::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: var(--ink, #fff); transform: scaleX(0); transform-origin: left; transition: transform 300ms cubic-bezier(0.23,1,0.32,1); } .ds-casenav a:hover, .ds-casenav a.is-active { color: var(--ink, #fff); } .ds-casenav a.is-active::after { transform: scaleX(1); } .ds-casenav a:focus-visible { outline: 2px solid var(--accent, #ff3131); outline-offset: 3px; }"
+    },
+    {
+      "name": "Section Head",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "Full-width hairline above an Inter Bold headline; no kicker.",
+      "html": "<div class=\"ds-head\"><span class=\"ds-line\"></span><h2 class=\"ds-h2\">Trabalhos em destaque</h2></div>",
+      "css": ".ds-head { display: grid; gap: 28px; } .ds-line { display: block; height: 1px; width: 100%; background: var(--line, rgba(255,255,255,0.34)); transform-origin: left center; } .ds-h2 { margin: 0; font-family: var(--f-title, Inter, Arial, sans-serif); font-weight: 700; font-size: clamp(2.25rem, 4.6vw, 4.5rem); line-height: 0.98; letter-spacing: -0.04em; color: var(--ink, #fff); text-wrap: balance; }"
+    },
+    {
+      "name": "WhatsApp Dock",
+      "kind": "button",
+      "refersTo": "whatsapp-dock",
+      "description": "Fixed bottom-right red action that appears after the hero.",
+      "html": "<a class=\"ds-dock\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.2-1.36A9.9 9.9 0 1 0 12.04 2Z\"/></svg><span>WhatsApp</span></a>",
+      "css": ".ds-dock { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 16px; background: var(--accent, #ff3131); color: var(--on-accent, #1a1b1b); font-family: var(--f-title, Inter, Arial, sans-serif); font-weight: 700; font-size: 0.9375rem; border-radius: 0; text-decoration: none; transition: transform 300ms cubic-bezier(0.23,1,0.32,1); } .ds-dock svg { width: 20px; height: 20px; } .ds-dock:active { transform: scale(0.97); } .ds-dock:focus-visible { outline: 2px solid var(--ink, #fff); outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Dark Room Cut by the Mark",
+    "overview": "The site is one continuous #1f2020 room from top to bottom. The hero is a portrait, not a reel: a black-and-white cut-out of Felipe stands centred and bottom-anchored in front of his own name, set huge, uppercase and pale grey behind him, with a thin elliptical orbit drawn around him and the five section links resting on that line. Below the hero the room is calm and capped at a 1240px reading width; work is shown as bare 9:16 video tiles, and each case presents its main piece inside a drawn phone next to a grid of stills.\n\nStructure comes from thin white hairlines: section rules that draw themselves in, the orbit ellipse, a single 29-degree diagonal in the hero, short rules under case names, hairline tops on services and results. The FL mark's slab angle still governs every diagonal and the diagonal clip-path wipe that reveals media. Type does the heavy lifting: Inter Bold speaks, Open Sans explains, thin wide Lexend Exa describes. Red belongs to the mark and to the WhatsApp action.\n\nMotion is cinematic and scrubbed to the scroll: on every load the FL mark is drawn as a red outline, fills, and flies to the nav corner while the curtain wipes away diagonally; the portrait rises out of a blur, the name's letters rise in, the orbit draws itself. On scroll the orbit items travel along the page into the top bar links while the ellipse fades.",
+    "keyCharacteristics": [
+      "One dark ground; light and color come from the photography and footage.",
+      "A cut-out portrait in front of the uppercase name, ringed by a hairline orbit that carries the menu.",
+      "Thin white hairlines as identity: section rules, the orbit, one 29-degree diagonal, short case rules.",
+      "Square corners everywhere except the drawn phone device.",
+      "Red reserved for the FL mark and the WhatsApp action.",
+      "Content capped at 1240px; media vertical-first (9:16)."
+    ],
+    "rules": [
+      { "name": "The Two Red Places Rule", "body": "Mark Red appears only on the FL mark and the WhatsApp action (plus the focus ring and selection, which are accessibility state). No red headings, red icons, red rules or red decoration.", "section": "colors" },
+      { "name": "The Lit-By-Picture Rule", "body": "The room has one background. Contrast and color come from the photography and footage; any plate over media is the neutral Veil, never a tinted gradient.", "section": "colors" },
+      { "name": "The Three Voices Rule", "body": "Inter Bold speaks, Open Sans explains, Lexend Exa thin describes. Do not set descriptions in Open Sans or titles in Lexend Exa.", "section": "typography" },
+      { "name": "The Tight Display Rule", "body": "Every Inter Bold setting is tracked negative (-0.01em on buttons, -0.02em to -0.04em on titles); thin Lexend Exa is always tracked positive.", "section": "typography" },
+      { "name": "The No-Shadow Rule", "body": "Separation is a hairline or a tone step, never a box-shadow.", "section": "elevation" },
+      { "name": "The Mark Angle Rule", "body": "Any diagonal in the system runs at the FL mark's 29 degrees. No other angles.", "section": "shapes" },
+      { "name": "The Hairline Rule", "body": "Lines are 1px, white at 0.34 or 0.16 alpha, and they draw themselves in (scaleX from 0, or stroke-dashoffset for the orbit and marks) rather than appearing.", "section": "shapes" },
+      { "name": "The One Device Rule", "body": "Rounded corners belong only to the phone frame that holds a case's main piece.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do keep the whole page on Room Ground and let photography and footage provide light and color.",
+      "Do reveal media with the diagonal clip-path wipe (expo.inOut, 1.1 to 1.2s) and draw hairlines in with scaleX or stroke-dashoffset.",
+      "Do run every diagonal at the mark's 29 degrees (rotate -29deg).",
+      "Do set titles in Inter 700 with negative tracking and descriptions in thin Lexend Exa with positive tracking.",
+      "Do put dark on-red text on red fills; use the text-tone red for small red text on the dark ground.",
+      "Do keep content inside the 1240px wrap; only the hero and the closing band go full-bleed.",
+      "Do gate hover effects behind (hover: hover) and (pointer: fine), and honor prefers-reduced-motion by skipping the intro, the orbit, Lenis and GSAP reveals."
+    ],
+    "donts": [
+      "Don't use Mark Red outside the FL mark and the WhatsApp action.",
+      "Don't round corners anywhere but the phone frame, or introduce cards with borders and padding; work sits in bare square media frames.",
+      "Don't add box-shadows or glows.",
+      "Don't use diagonals at any angle other than the mark's.",
+      "Don't put a kicker or eyebrow label above section headlines; the hairline is the section marker.",
+      "Don't tint the plates over footage; the veil is neutral."
+    ]
+  }
+}

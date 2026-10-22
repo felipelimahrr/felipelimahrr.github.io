@@ -1,0 +1,18 @@
+# Vídeos originais pesados (o site usa as cópias leves trapiche.mp4 e alphaville.mp4)
+assets/videos/Trapiche editado.mp4
+assets/videos/Alphaville editado.mp4
+
+# Foto original (o site usa felipe-recorte.webp)
+assets/fotos/EU hero.png
+
+# Material de referência e arquivos de trabalho
+referencia/
+.playwright-mcp/
+.taste-skill/
+.impeccable/review/
+.claude/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
