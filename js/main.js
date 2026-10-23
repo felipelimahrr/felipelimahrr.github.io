@@ -304,47 +304,79 @@
   /* ---------- Anel do menu ao redor da foto ---------- */
   // Ângulos (graus, sentido horário a partir da direita) de cada item sobre a elipse.
   const ANGLES_DESK = [236, 168, 304, 12, 52];
-  // no celular: dois itens acima do nome, dois sobre os ombros, um embaixo
-  const ANGLES_PHONE = [250, 160, 290, 20, 115];
-  const INSIDE_PHONE = [false, true, false, true, true];
+  // no celular: dois de cada lado do anel (abaixo do nome) e um embaixo; o texto fica do lado de dentro
+  const ANGLES_PHONE = [192, 160, 348, 20, 115];
+  const INSIDE_PHONE = [true, true, true, true, true];
   const orbitLinks = $$('a', orbit);
   const ellipse = $('.orbit-line');
 
-  function orbitPoints() {
+  // Caixa de um elemento do topo, medida sem as animações (offset ignora transform).
+  function heroBox(node, pad = 10) {
+    if (!node || !node.offsetParent) return null;
+    const ty = parseFloat((getComputedStyle(node).translate || '0 0').split(' ')[1]) || 0;
+    const top = node.offsetTop + ty;
+    return { l: node.offsetLeft - pad, t: top - pad, r: node.offsetLeft + node.offsetWidth + pad, b: top + node.offsetHeight + pad };
+  }
+  const hits = (a, b) => a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t;
+
+  function placeOrbit() {
     // no celular o anel é mais largo e mais baixo
-    const geo = isPhone() ? { cy: 56, rx: 40, ry: 34 } : { cy: 56, rx: 33, ry: 41 };
-    const r = hero.getBoundingClientRect();
-    const cx = 0.5 * r.width;
-    const cy = (geo.cy / 100) * r.height;
-    const rx = (geo.rx / 100) * r.width;
-    const ry = (geo.ry / 100) * r.height;
+    const phone = isPhone();
+    const geo = phone ? { cy: 56, rx: 40, ry: 34 } : { cy: 56, rx: 33, ry: 41 };
+    const W = hero.offsetWidth;
+    const H = hero.offsetHeight;
+    const cx = 0.5 * W;
+    const cy = (geo.cy / 100) * H;
+    const rx = (geo.rx / 100) * W;
+    const ry = (geo.ry / 100) * H;
     // o SVG usa as medidas reais em pixels, para o traço ser desenhado por inteiro
-    ellipse.ownerSVGElement.setAttribute('viewBox', `0 0 ${r.width} ${r.height}`);
+    ellipse.ownerSVGElement.setAttribute('viewBox', `0 0 ${W} ${H}`);
     ellipse.setAttribute('cx', cx);
     ellipse.setAttribute('cy', cy);
     ellipse.setAttribute('rx', rx);
     ellipse.setAttribute('ry', ry);
-    const angles = isPhone() ? ANGLES_PHONE : ANGLES_DESK;
-    return orbitLinks.map((a, i) => {
-      const t = (angles[i % angles.length] * Math.PI) / 180;
-      // no celular alguns textos ficam do lado de dentro do anel, sobre a roupa escura
-      const outside = Math.cos(t) < 0;
-      const inside = isPhone() && INSIDE_PHONE[i % INSIDE_PHONE.length];
-      return { x: cx + rx * Math.cos(t), y: cy + ry * Math.sin(t), left: inside ? !outside : outside };
-    });
-  }
-  function placeOrbit() {
-    const pts = orbitPoints();
+
+    // O que os itens nunca podem cobrir: o nome, o "Video Maker & Creator", os botões e a barra.
+    const blocked = [
+      heroBox($('.hero__name')), heroBox($('.hero__role')), heroBox($('.hero__cta')), heroBox($('.hero__scroll')),
+      { l: 0, t: 0, r: W, b: navH() + 8 },
+    ].filter(Boolean);
+    const vw = document.documentElement.clientWidth;
+    const angles = phone ? ANGLES_PHONE : ANGLES_DESK;
+
     orbitLinks.forEach((a, i) => {
-      const p = pts[i];
-      a.classList.toggle('is-left', p.left);
       const w = a.offsetWidth;
       const h = a.offsetHeight;
-      // o quadradinho fica exatamente sobre a linha
-      const vw = document.documentElement.clientWidth;
-      const x = p.left ? p.x - w + 3.5 : p.x - 3.5;
-      a.style.left = `${Math.min(Math.max(x, 8), vw - w - 8)}px`;
-      a.style.top = `${p.y - h / 2}px`;
+      const base = angles[i % angles.length];
+      const inside = phone && INSIDE_PHONE[i % INSIDE_PHONE.length];
+      let best = null;
+      // Procura, a partir do ângulo preferido, o ponto mais próximo do anel com espaço livre.
+      for (let step = 0; step <= 90 && !best; step += 3) {
+        for (const dir of step ? [-1, 1] : [1]) {
+          const t = ((base + dir * step) * Math.PI) / 180;
+          const outside = Math.cos(t) < 0;
+          const left = inside ? !outside : outside;
+          const px = cx + rx * Math.cos(t);
+          const py = cy + ry * Math.sin(t);
+          // o quadradinho fica exatamente sobre a linha
+          const x = left ? px - w + 3.5 : px - 3.5;
+          const box = { l: x, t: py - h / 2, r: x + w, b: py + h / 2 };
+          const onScreen = x >= 8 && x + w <= vw - 8 && box.t >= 0 && box.b <= H;
+          if (onScreen && !blocked.some((o) => hits(box, o))) { best = { x, y: box.t, left, box }; break; }
+        }
+      }
+      if (!best) {
+        // sem espaço livre: fica no ângulo preferido, dentro da tela
+        const t = (base * Math.PI) / 180;
+        const left = Math.cos(t) < 0;
+        const px = cx + rx * Math.cos(t);
+        const x = Math.min(Math.max(left ? px - w + 3.5 : px - 3.5, 8), vw - w - 8);
+        best = { x, y: cy + ry * Math.sin(t) - h / 2, left, box: { l: x, t: 0, r: x + w, b: 0 } };
+      }
+      blocked.push({ l: best.box.l - 8, t: best.box.t - 4, r: best.box.r + 8, b: best.box.b + 4 });
+      a.classList.toggle('is-left', best.left);
+      a.style.left = `${best.x}px`;
+      a.style.top = `${best.y}px`;
     });
   }
   // Destino de cada item na barra (link correspondente, ou o botão "Menu" no celular).
