@@ -563,18 +563,19 @@ html.intro-done .intro { display: none; }
   align-items: start;
 }
 .case__top { grid-column: 1 / -1; }
-.case__info { display: grid; gap: clamp(20px, 2vw, 28px); align-content: start; }
+.case__info { display: grid; gap: clamp(20px, 2vw, 28px); align-content: start; container-type: inline-size; }
 .case__head { display: grid; gap: 14px; align-content: start; justify-items: start; }
 .case__logo { height: 72px; width: auto; max-width: 200px; object-fit: contain; object-position: left center; filter: grayscale(1) brightness(1.5); margin-bottom: 8px; }
 .case__name {
   font-family: var(--f-title);
   font-weight: 700;
-  font-size: var(--t-h3);
+  /* o @ inteiro numa linha: a letra só diminui quando o nome não cabe na coluna */
+  font-size: min(var(--t-h3), 7.2cqi);
   line-height: 1.05;
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: var(--ink);
-  overflow-wrap: anywhere;
+  white-space: nowrap;
 }
 .case__rule { width: 72px; }
 .case__text { display: grid; gap: 12px; max-width: 60ch; align-content: start; }
